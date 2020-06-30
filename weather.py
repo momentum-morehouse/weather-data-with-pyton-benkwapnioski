@@ -2,19 +2,19 @@ import requests
 
 # this is a sample request 
 def climate(lat, lon):
-url = "https://api.climacell.co/v3/weather/realtime"
-payload = {
-  "apikey": "HPbxRKzxd5rG6poQFZ9os9dSjcszBge2",
-  "lat":lat, 
-  "lon":lon,
-  "fields": ["temp", "precipitation", "wind_gust"],
-  "unit_system":"us", 
+    url = "https://api.climacell.co/v3/weather/realtime"
+    payload = {
+        "apikey": "HPbxRKzxd5rG6poQFZ9os9dSjcszBge2",
+        "lat":lat, 
+        "lon":lon,
+        "fields": ["temp", "precipitation", "wind_gust"],
+        "unit_system":"us", 
 
    }
 
-response = requests.get(url, params=payload).json()
+    response = requests.get(url, params=payload).json()
 
-print(response)
+    print(response)
 
 # If you want to use classes
 # class Place:
@@ -31,9 +31,9 @@ locations = [(48.8566, 2.3522), (41.9028, 12.4964), (41.8695, 87.6511), (33.4484
 # you can use [] to retrieve items by position, like you can in list
 # ex. (lat, long)[0] = lat
 
-def get_weather_data(lat,lon):
-  for location in locations:
-    climate(location[0],location[2])
+
+for location in locations:
+    climate(location[0],location[1])
 
   # get lats and longs from tuples
   # give me temp and precip for a location, given lat and long
